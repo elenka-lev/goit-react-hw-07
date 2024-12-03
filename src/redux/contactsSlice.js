@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice, isAnyOf } from "@reduxjs/toolkit"
 import { deleteContact, fetchContacts, addContact } from "./contactsOps";
 
 
@@ -34,9 +34,23 @@ const slice = createSlice({
             .addCase(addContact.fulfilled, (state, action) => {
                 state.items.push(action.payload)
             })
+            .addMatcher(isAnyOf(addContact.pending, fetchContacts.pending, deleteContact.pending), state => {
+                state.isError = false;
+                state.isLoading = true;
+            })
+            .addMatcher(isAnyOf(addContact.rejected, fetchContacts.rejected, deleteContact.rejected), state => {
+                state.isLoading = false;
+                state.isError = true;
+            })
+            .addMatcher(isAnyOf(addContact.fulfilled, fetchContacts.fulfilled, deleteContact.fulfilled), state => {
+                state.isLoading = false;
+                state.isError = false;
+            });
     }
 })
 
 export const selectContacts = state => state.contacts.items;
+export const selectIsError = state => state.contacts.isError;
+export const selectIsLoading = state => state.contacts.isLoading;
 
 export const contactReducer = slice.reducer; //іде у стор

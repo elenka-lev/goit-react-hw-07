@@ -7,9 +7,10 @@ import Loading from './Loading/Loading';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchContacts } from '../redux/contactsOps';
+import { selectIsLoading } from '../redux/contactsSlice';
 
 const App = () => {
-    const isLoading = useSelector(state=>state.isLoading)
+    const isLoading = useSelector(selectIsLoading)
     const dispatch = useDispatch();
 
     useEffect(() => {
