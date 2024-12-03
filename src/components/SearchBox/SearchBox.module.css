@@ -1,0 +1,19 @@
+.input {
+    border-radius: 30px;
+    border: 1px solid rgb(97, 96, 96);
+    height: 49px;
+    font-weight: 400;
+    font-size: 20px;
+    padding-left: 15px;
+    width: 263px;
+    margin-bottom: 10px;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.input[placeholder] {
+    color:rgb(97, 96, 96);
+}
+.input:hover,
+.input:focus {
+    border: 2px solid #14865C;
+}

@@ -1,0 +1,16 @@
+.container {
+    max-width: 320px;
+    background: url(../../assets/img/mob-bg-1.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 375px;
+    margin-bottom: 20px;
+}
+.title {
+    color:black;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    margin-left: 240px;
+    white-space: nowrap;
+}
