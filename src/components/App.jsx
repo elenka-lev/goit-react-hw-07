@@ -6,7 +6,7 @@ import ContactList from './ContactList/ContactList';
 import Loading from './Loading/Loading';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { fetchContacts } from '../redux/operations';
+import { fetchContacts } from '../redux/contactsOps';
 
 const App = () => {
     const isLoading = useSelector(state=>state.isLoading)

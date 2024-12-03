@@ -1,8 +1,7 @@
 import s from './ContactForm.module.css';
 import { Field, Form, Formik } from 'formik';
 import { useDispatch } from 'react-redux';
-import { addContact } from '../../redux/contactsSlice';
-import { nanoid } from '@reduxjs/toolkit';
+import { addContact } from '../../redux/contactsOps';
 import { useId } from 'react';
 
 const ContactForm = () => {
@@ -11,13 +10,12 @@ const ContactForm = () => {
     const contactPhoneId = useId();
     const initialValues = {
         name: '',
-        phone: '',
+        number: '',
     }
     const onSubmit = (values, options) => {
         const newContact = {
-            id: nanoid(),
             name: values.name,
-            phone: values.phone,
+            number: values.number,
         }
         dispatch(addContact(newContact))
         options.resetForm()
@@ -30,7 +28,7 @@ const ContactForm = () => {
                     <label className={s.label} htmlFor={contactNameId}>Enter the name</label>
                     <Field type='text' className={s.input} name='name' id={contactNameId} /> 
                     <label className={s.label} htmlFor={contactPhoneId}>Enter the phone</label>
-                    <Field type='phone' className={s.input} name='phone' id={contactPhoneId} />
+                    <Field type='phone' className={s.input} name='number' id={contactPhoneId} />
                     <button className={s.btn} type='submit' >Add contact</button>
                 </Form>
         </Formik>
