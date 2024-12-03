@@ -11,15 +11,6 @@ const initialState = {
 const slice = createSlice({
     name: 'contacts',
     initialState,
-    reducers: {
-        //addContact це action, котрий буде виконуватися
-        addContact: (state, action) => {
-            state.items.push(action.payload);
-        },
-        removeContact: (state, action) => {
-            state.items = state.items.filter(contact => contact.id  !== action.payload)
-        },
-    },
     extraReducers: builder => {
         builder
             .addCase(fetchContacts.fulfilled, (state, action) => {
