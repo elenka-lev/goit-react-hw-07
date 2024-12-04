@@ -21,7 +21,7 @@
     font-weight: 400;
     font-size: 20px;
     padding-left: 15px;
-    width: 262px;
+    max-width: 262px;
     margin-bottom: 10px;
     outline: none;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -38,7 +38,8 @@
     padding: 15px 35px 16px 35px;
     cursor: pointer;
     height: 49px;
-    width: 282px;
+    width: 100%;
+    max-width: 282px;
     font-weight: 600;
     font-size: 15px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -46,4 +47,46 @@
 .btn:hover {
     background-color: #14865C;
     color: #ffffff;
+}
+
+@media (min-width: 768px) and (max-width: 1279px){
+    .container {
+        max-width: 768px;
+    }
+    .form {
+        width: 370px;
+    }
+    .input {
+        width: 100%;
+       max-width: 300px;
+    }
+    .label {
+        font-size: 15px;
+    }
+    .btn {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 20px;
+    }
+}
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1280px;
+    }
+    .form {
+        display: flex;
+        width: 520px;
+        justify-content: center;
+        margin: 0 auto;
+    }
+    .input {
+        width: 100%;
+        max-width: 500px;
+    }
+    .btn {
+        width: 100%;
+        max-width: 500px;
+        margin-bottom: 20px;
+    }
+    
 }

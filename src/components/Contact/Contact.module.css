@@ -33,3 +33,12 @@
    background-color: #14865C;
    color:#ffffff
 }
+
+@media (min-width: 768px) {
+    .item {
+        width: 340px;
+    }
+}
+@media (min-width: 1280px) {
+    
+}

@@ -5,7 +5,9 @@ import { changeFilter } from '../../redux/filtersSlice';
 const SearchBox = () => {
     const dispatch = useDispatch()
     return (
-        <input type='text' placeholder='Search...' className={s.input} onChange={(e) => {dispatch(changeFilter(e.target.value))} } />
+        <div className={s.container}>
+            <input type='text' placeholder='Search...' className={s.input} onChange={(e) => { dispatch(changeFilter(e.target.value)) }} />
+        </div>
     )
 }
 

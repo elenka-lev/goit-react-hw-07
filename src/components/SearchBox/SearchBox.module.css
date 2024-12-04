@@ -1,3 +1,6 @@
+.container {
+    max-width: 320px;
+}
 .input {
     border-radius: 30px;
     border: 1px solid rgb(97, 96, 96);
@@ -5,7 +8,7 @@
     font-weight: 400;
     font-size: 20px;
     padding-left: 15px;
-    width: 263px;
+    width: 261px;
     margin-bottom: 10px;
     outline: none;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -16,4 +19,22 @@
 .input:hover,
 .input:focus {
     border: 2px solid #14865C;
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+    .input {
+        width: 300px;
+    }
+}
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1280px;
+    }
+    .input {
+        width: 100%;
+        width: 500px;
+    }
 }
